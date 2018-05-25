@@ -122,6 +122,16 @@ public:
 
 	~idTempArray();
 
+	T * begin()
+	{
+		return &buffer[0];
+	}
+
+	T * end()
+	{
+		return &buffer[num];
+	}
+
 	T & operator []( unsigned int i ) { assert( i < num ); return buffer[i]; }
 	const T & operator []( unsigned int i ) const { assert( i < num ); return buffer[i]; }
 
@@ -170,6 +180,9 @@ idTempArray::~idTempArray
 template < class T >
 ID_INLINE idTempArray<T>::~idTempArray() {
 	Mem_Free( buffer );
+#ifdef _DEBUG
+	printf("Temp Array가 성공적으로 Free 되었습니다. Size : %d", num);
+#endif
 }
 
 /*

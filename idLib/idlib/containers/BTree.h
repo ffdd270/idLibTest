@@ -42,14 +42,21 @@ If you have questions concerning this license or the applicable additional terms
 template< class objType, class keyType >
 class idBTreeNode {
 public:
-	keyType							key;			// key used for sorting
-	objType *						object;			// if != NULL pointer to object stored in leaf node
-	idBTreeNode *					parent;			// parent node
-	idBTreeNode *					next;			// next sibling
-	idBTreeNode *					prev;			// prev sibling
-	int								numChildren;	// number of children
-	idBTreeNode *					firstChild;		// first child
-	idBTreeNode *					lastChild;		// last child
+	keyType							key;			// key used for sorting 
+													// 소팅에 쓰는 키입니다. 
+	objType *						object;			// if != NULL pointer to object stored in leaf node 
+													// 만약 nullptr이 아니면 오브젝트는 잎 노드에 보관되어 있습니다. 
+	idBTreeNode *					parent;			// parent node 
+													// 엄마 노드  
+	idBTreeNode *					next;			// next sibling 
+													// 다음 잎
+	idBTreeNode *					prev;			// prev sibling 
+													// 전 잎.
+	int								numChildren;	// number of children 
+													// 자식들의 갯수. 
+	idBTreeNode *					firstChild;		// first child 
+													// 첫번째 자식
+	idBTreeNode *					lastChild;		// last child 마지막 자식. 
 };
 
 
@@ -62,12 +69,17 @@ public:
 	void							Init();
 	void							Shutdown();
 
-	idBTreeNode<objType,keyType> *	Add( objType *object, keyType key );						// add an object to the tree
-	void							Remove( idBTreeNode<objType,keyType> *node );				// remove an object node from the tree
-
+	idBTreeNode<objType,keyType> *	Add( objType *object, keyType key );						// add an object to the tree 
+																								// 트리에 오브젝트를 추가합니다.
+	void							Remove( idBTreeNode<objType,keyType> *node );				// remove an object node from the tree 
+																								// 트리에서 오브젝트를 삭제합니다. 
+	 
 	idBTreeNode<objType,keyType> *	NodeFind( keyType key ) const;								// find an object using the given key
-	idBTreeNode<objType,keyType> *	NodeFindSmallestLargerEqual( keyType key ) const;			// find an object with the smallest key larger equal the given key
-	idBTreeNode<objType,keyType> *	NodeFindLargestSmallerEqual( keyType key ) const;			// find an object with the largest key smaller equal the given key
+																								// Key를 이용해 Object를 찾습니다. 
+	idBTreeNode<objType,keyType> *	NodeFindSmallestLargerEqual( keyType key ) const;			// find an object with the smallest key larger equal the given key 
+																								//
+	idBTreeNode<objType,keyType> *	NodeFindLargestSmallerEqual( keyType key ) const;			// find an object with the largest key smaller equal the given key 
+																								//
 
 	objType *						Find( keyType key ) const;									// find an object using the given key
 	objType *						FindSmallestLargerEqual( keyType key ) const;				// find an object with the smallest key larger equal the given key

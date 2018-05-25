@@ -4,12 +4,13 @@
 #include "TestIdLib.h"
 #include "CWelcomeC17.h"
 #include "IsTypeIdSame.h"
+#include "idFirstTest.h"
 #include <cstdio>
 
 
 int main(int argc, char * argv[])
 {
-	IExample * test = new CWelcomeC17();
+	IExample * test = new idFirstTest();
 
 	//test -> this
 	unsigned char ch = -1;

@@ -26,7 +26,6 @@ auto CoFunc(int n) ->std::experimental::generator<uint64>
 
 
 
-
 int CWelcomeC17::start(int argc, char * argv[])
 {
 	uint64 temp;
@@ -34,9 +33,9 @@ int CWelcomeC17::start(int argc, char * argv[])
 	std::variant<int, std::string> i;
 	
 	//std:: ÄÚ-·çÆ¾.
-	for (uint64 num : CoFunc(100))
+	for (uint64 num : CoFunc(1000000))
 	{
-		std::cout << num << std::endl;
+		//std::cout << num << std::endl;
 	}
 
 	
