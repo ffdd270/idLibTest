@@ -12,6 +12,8 @@ int idFirstTest::start(int argc, char * argv[])
 {
 	//Input Num Of Element
 	int numOfTempArray;
+	
+	iswdigit('ㅁ');
 	std::cout << "Please Input Num Of Element for Temp Array \n";
 	std::cin >> numOfTempArray;
 
@@ -64,7 +66,9 @@ void idFirstTest::TreeTest(idBTree<char *, WCHAR *, 4> &tree)
 		std::cout << "Value : " << *tree.Find(koreanString) << std::endl;
 	}
 
-	std::cout << "Error Checking. Wrong Key : " << tree.Find(L"오류다.") <<std::endl;
+	std::cout << "Error Checking. Right Key In Korean. \"안녕하세요\"  : " << *tree.Find(L"안녕하세요.") << std::endl;
+
+	std::cout << "Error Checking. Wrong Key In Korean. \"오류다\" : " << tree.Find(L"오류다.") <<std::endl;
 }
 
 void idFirstTest::ArrayPrint(idTempArray<int> &tempArray, idArray<int, 4> &array)

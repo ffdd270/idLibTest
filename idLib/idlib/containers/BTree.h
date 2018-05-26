@@ -130,10 +130,11 @@ template< class objType, class keyType, int maxChildrenPerNode >
 ID_INLINE idBTreeNode<objType,keyType> *idBTree<objType,keyType,maxChildrenPerNode>::Add( objType *object, keyType key ) {
 	idBTreeNode<objType,keyType> *node, *child, *newNode;
 
+	//Init에서 초기화를 안했다면 Add에서 해준다. 
 	if ( root == NULL ) {
 		root = AllocNode();
 	}
-
+	//루트의 부모가 한계를 초과하면, 새 루트로 바꾼다. 
 	if ( root->numChildren >= maxChildrenPerNode ) {
 		newNode = AllocNode();
 		newNode->key = root->key;
@@ -144,11 +145,12 @@ ID_INLINE idBTreeNode<objType,keyType> *idBTree<objType,keyType,maxChildrenPerNo
 		SplitNode( root );
 		root = newNode;
 	}
-
+	//자식 추가. 
 	newNode = AllocNode();
 	newNode->key = key;
 	newNode->object = object;
 
+	//
 	for ( node = root; node->firstChild != NULL; node = child ) {
 
 		if ( key > node->key ) {
