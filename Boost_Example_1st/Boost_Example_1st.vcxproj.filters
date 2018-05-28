@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\idLibTestCode">
+      <UniqueIdentifier>{13f2d80a-ae81-4242-b5c2-d5b85fcb8a65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -51,6 +54,12 @@
     <ClInclude Include="idFirstTest.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CStyleString.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WinThreadTest.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -71,13 +80,19 @@
     <ClCompile Include="IsTypeIdSame.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="TestIdLib.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="idTestThread.cpp">
+    <ClCompile Include="CStyleString.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="idFirstTest.cpp">
+      <Filter>소스 파일\idLibTestCode</Filter>
+    </ClCompile>
+    <ClCompile Include="idTestThread.cpp">
+      <Filter>소스 파일\idLibTestCode</Filter>
+    </ClCompile>
+    <ClCompile Include="TestIdLib.cpp">
+      <Filter>소스 파일\idLibTestCode</Filter>
+    </ClCompile>
+    <ClCompile Include="WinThreadTest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="idCommon.h" />
     <ClInclude Include="idlib\CmdArgs.h" />
     <ClInclude Include="idlib\containers\Array.h" />
     <ClInclude Include="idlib\containers\BTree.h" />
@@ -38,6 +39,7 @@
     <ClInclude Include="idlib\Thread.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="idCommon.cpp" />
     <ClCompile Include="idlib\CmdArgs.cpp" />
     <ClCompile Include="idlib\Heap.cpp" />
     <ClCompile Include="idlib\Lib.cpp" />

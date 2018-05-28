@@ -1,12 +1,35 @@
 #include "stdafx.h"
 #include "idFirstTest.h"
 
-
+#include <vector>
 idFirstTest::idFirstTest()
 {
 }
 
 
+
+template<typename objType, typename keyType, int nodeForChildren>
+void TemplateTreeTest(std::vector<objType> objs, std::vector<keyType> keys)
+{
+	idBTree<objType, keyType, nodeForChildren> tree
+	if (keys.size() != objs.size())
+	{
+		assert(false && "Worng Value!");
+		return; 
+	}
+
+	tree.Init();
+
+	for (int i = 0; i < keys.size(); i++)
+	{
+		tree.Add(&objs[i], keys[i]);
+	}
+
+	for (int i = 0; i < keys.size(); i++)
+	{
+		std::cout << "Key : " << keys[i] << " Value : " << *tree.Find(keys[i]) << std::endl;
+	}
+}
 
 int idFirstTest::start(int argc, char * argv[])
 {
@@ -24,11 +47,11 @@ int idFirstTest::start(int argc, char * argv[])
 	idArray<int, 4> array;
 	idBTree<char *, WCHAR *, 4> tree;
 	
-
+	
 	ArrayInit(tempArray, array);
 	ArrayPrint(tempArray, array);
 	TreeTest(tree);
-
+	
 	return 0;
 }
 

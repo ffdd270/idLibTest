@@ -1,7 +1,6 @@
 #include "precompiled.h"
 #pragma hdrstop
 
-
 /*
 ===========================================================================
 
@@ -35,7 +34,6 @@ If you have questions concerning this license or the applicable additional terms
 Contains the AssertMacro implementation.
 ================================================================================================
 */
-
 
 struct skippedAssertion_t {
 	skippedAssertion_t() :

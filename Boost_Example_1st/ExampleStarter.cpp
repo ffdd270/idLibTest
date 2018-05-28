@@ -5,12 +5,13 @@
 #include "CWelcomeC17.h"
 #include "IsTypeIdSame.h"
 #include "idFirstTest.h"
+#include "CStyleString.h"
+#include "WinThreadTest.h"
 #include <cstdio>
-
 
 int main(int argc, char * argv[])
 {
-	IExample * test = new idFirstTest();
+	IExample * test = new WinThreadTest();
 
 	//test -> this
 	unsigned char ch = -1;

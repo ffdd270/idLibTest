@@ -2,9 +2,9 @@
 ===========================================================================
 
 Doom 3 BFG Edition GPL Source Code
-Copyright (C) 1993-2012 id Software LLC, a ZeniMax Media company. 
+Copyright (C) 1993-2012 id Software LLC, a ZeniMax Media company.
 
-This file is part of the Doom 3 BFG Edition GPL Source Code ("Doom 3 BFG Edition Source Code").  
+This file is part of the Doom 3 BFG Edition GPL Source Code ("Doom 3 BFG Edition Source Code").
 
 Doom 3 BFG Edition Source Code is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -45,28 +45,6 @@ If you have questions concerning this license or the applicable additional terms
 ===============================================================================
 */
 
-class idCommon
-{
-public:
-
-	ID_INLINE void Warning(const char * str, ...)
-	{
-
-	}
-	ID_INLINE void VPrintf(const char * fmt, const char * argPtr)
-	{	
-	}
-	ID_INLINE void FatalError(const char * str, ...)
-	{
-
-	}
-	ID_INLINE void Error(const char * str, ...)
-	{
-
-	}
-	
-};
-
 class idLib {
 private:
 	static bool					mainThreadInitialized;
@@ -82,19 +60,18 @@ public:
 	static void					Init();
 	static void					ShutDown();
 
-	// wrapper to idCommon functions 
-	static void					Printf( const char *fmt, ... );
-	static void					PrintfIf( const bool test, const char *fmt, ... );
-	NO_RETURN static void		Error( const char *fmt, ... );
-	NO_RETURN static void		FatalError( const char *fmt, ... );
-	static void					Warning( const char *fmt, ... );
-	static void					WarningIf( const bool test, const char *fmt, ... );
+	// wrapper to idCommon functions
+	static void					Printf(const char *fmt, ...);
+	static void					PrintfIf(const bool test, const char *fmt, ...);
+	NO_RETURN static void		Error(const char *fmt, ...);
+	NO_RETURN static void		FatalError(const char *fmt, ...);
+	static void					Warning(const char *fmt, ...);
+	static void					WarningIf(const bool test, const char *fmt, ...);
 
 	// the extra check for mainThreadInitialized is necessary for this to be accurate
 	// when called by startup code that happens before idLib::Init
-	static bool					IsMainThread() { return ( 0 == mainThreadInitialized ) || ( 1 == isMainThread ); }
+	static bool					IsMainThread() { return (0 == mainThreadInitialized) || (1 == isMainThread); }
 };
-
 
 /*
 ===============================================================================
@@ -148,28 +125,28 @@ extern	idVec4 colorMdGrey;
 extern	idVec4 colorDkGrey;
 
 // packs color floats in the range [0,1] into an integer
-dword	PackColor( const idVec3 &color );
-void	UnpackColor( const dword color, idVec3 &unpackedColor );
-dword	PackColor( const idVec4 &color );
-void	UnpackColor( const dword color, idVec4 &unpackedColor );
+dword	PackColor(const idVec3 &color);
+void	UnpackColor(const dword color, idVec3 &unpackedColor);
+dword	PackColor(const idVec4 &color);
+void	UnpackColor(const dword color, idVec4 &unpackedColor);
 
 // little/big endian conversion
-short	BigShort( short l );
-short	LittleShort( short l );
-int		BigLong( int l );
-int		LittleLong( int l );
-float	BigFloat( float l );
-float	LittleFloat( float l );
-void	BigRevBytes( void *bp, int elsize, int elcount );
-void	LittleRevBytes( void *bp, int elsize, int elcount );
-void	LittleBitField( void *bp, int elsize );
+short	BigShort(short l);
+short	LittleShort(short l);
+int		BigLong(int l);
+int		LittleLong(int l);
+float	BigFloat(float l);
+float	LittleFloat(float l);
+void	BigRevBytes(void *bp, int elsize, int elcount);
+void	LittleRevBytes(void *bp, int elsize, int elcount);
+void	LittleBitField(void *bp, int elsize);
 void	Swap_Init();
 
 bool	Swap_IsBigEndian();
 
 // for base64
-void	SixtetsForInt( byte *out, int src);
-int		IntForSixtets( byte *in );
+void	SixtetsForInt(byte *out, int src);
+int		IntForSixtets(byte *in);
 
 /*
 ================================================
@@ -180,23 +157,23 @@ class idException {
 public:
 	static const int MAX_ERROR_LEN = 2048;
 
-					idException( const char *text = "" ) { 
-						strncpy( error, text, MAX_ERROR_LEN ); 
-					}
+	idException(const char *text = "") {
+		strncpy(error, text, MAX_ERROR_LEN);
+	}
 
 	// this really, really should be a const function, but it's referenced too many places to change right now
-	const char *	GetError() { 
-						return error; 
-					}	
+	const char *	GetError() {
+		return error;
+	}
 
 protected:
 	// if GetError() were correctly const this would be named GetError(), too
-	char *		GetErrorBuffer() { 
-					return error; 
-				}	
-	int			GetErrorBufferSize() { 
-					return MAX_ERROR_LEN; 
-				}
+	char *		GetErrorBuffer() {
+		return error;
+	}
+	int			GetErrorBufferSize() {
+		return MAX_ERROR_LEN;
+	}
 
 private:
 	friend class idFatalException;
@@ -212,22 +189,22 @@ class idFatalException {
 public:
 	static const int MAX_ERROR_LEN = 2048;
 
-	idFatalException( const char *text = "" ) { 
-		strncpy( idException::error, text, MAX_ERROR_LEN ); 
+	idFatalException(const char *text = "") {
+		strncpy(idException::error, text, MAX_ERROR_LEN);
 	}
 
 	// this really, really should be a const function, but it's referenced too many places to change right now
-	const char *	GetError() { 
-		return idException::error; 
-	}	
+	const char *	GetError() {
+		return idException::error;
+	}
 
 protected:
 	// if GetError() were correctly const this would be named GetError(), too
-	char *		GetErrorBuffer() { 
-		return idException::error; 
-	}	
-	int			GetErrorBufferSize() { 
-		return MAX_ERROR_LEN; 
+	char *		GetErrorBuffer() {
+		return idException::error;
+	}
+	int			GetErrorBufferSize() {
+		return MAX_ERROR_LEN;
 	}
 };
 
@@ -238,7 +215,7 @@ idNetworkLoadException
 */
 class idNetworkLoadException : public idException {
 public:
-	idNetworkLoadException( const char * text = "" ) : idException( text ) { }
+	idNetworkLoadException(const char * text = "") : idException(text) { }
 };
 
 /*
@@ -277,7 +254,6 @@ public:
 #include "math/Interpolate.h"
 #include "math/Curve.h"
 #include "math/Ode.h"
-
 
 // bounding volumes
 #include "bv/Sphere.h"
