@@ -34,7 +34,8 @@ int WinThreadTest::start(int argc, char * argv[])
 	strcpy_s(data->textPath, data->textLen, text.data());
 	strcpy_s(data->filePath, data->fileLen, path.data());
 
-	
+	 //length(path);
+
 
 	CreateThread(NULL, 0, FileCreate, (void *)data, 0, NULL);
 

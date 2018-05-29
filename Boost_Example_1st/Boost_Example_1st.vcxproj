@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="CStyleString.h" />
     <ClInclude Include="CWelcomeC17.h" />
+    <ClInclude Include="EuclideanAlgorithm.h" />
     <ClInclude Include="Example.h" />
     <ClInclude Include="idFirstTest.h" />
     <ClInclude Include="idTestThread.h" />
@@ -179,6 +180,7 @@
   <ItemGroup>
     <ClCompile Include="CStyleString.cpp" />
     <ClCompile Include="CWelcomeC17.cpp" />
+    <ClCompile Include="EuclideanAlgorithm.cpp" />
     <ClCompile Include="ExampleStarter.cpp" />
     <ClCompile Include="idFirstTest.cpp" />
     <ClCompile Include="idTestThread.cpp" />

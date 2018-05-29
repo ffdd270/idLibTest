@@ -7,11 +7,12 @@
 #include "idFirstTest.h"
 #include "CStyleString.h"
 #include "WinThreadTest.h"
+#include "EuclideanAlgorithm.h"
 #include <cstdio>
 
 int main(int argc, char * argv[])
 {
-	IExample * test = new WinThreadTest();
+	IExample * test = new EuclideanAlgorithm();
 
 	//test -> this
 	unsigned char ch = -1;
