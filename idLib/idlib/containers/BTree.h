@@ -594,6 +594,7 @@ ID_INLINE void idBTree<objType, keyType, maxChildrenPerNode>::CheckTree() const 
 	if (lastNode) {
 		for (node = GetNextLeaf(lastNode); node; lastNode = node, node = GetNextLeaf(node)) {
 			assert(lastNode->key <= node->key);
+			
 		}
 	}
 }

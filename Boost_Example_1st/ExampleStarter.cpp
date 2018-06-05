@@ -9,13 +9,15 @@
 #include "WinThreadTest.h"
 #include "EuclideanAlgorithm.h"
 #include <cstdio>
+#include <fstream>
 
 int main(int argc, char * argv[])
 {
-	IExample * test = new EuclideanAlgorithm();
+	IExample * test = new CWelcomeC17();
 
 	//test -> this
 	unsigned char ch = -1;
 	test->start(argc, argv);
 	system("pause");
 }
+

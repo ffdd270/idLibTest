@@ -5,6 +5,7 @@ CWelcomeC17::CWelcomeC17()
 {
 }
 
+
 auto CoFunc(int n) ->std::experimental::generator<uint64>
 {
 	std::cout << "The Answer All Universe, Life, and Everything.";

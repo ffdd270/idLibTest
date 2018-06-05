@@ -39,7 +39,7 @@ int EuclideanAlgorithm::start(int argc, char * argv[])
 
 	}
 
-	cout << "result : " << n << " loop : " << loop;
+	cout << "result : " << n;
 	return 0;
 }
 
