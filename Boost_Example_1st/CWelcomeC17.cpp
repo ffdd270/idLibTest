@@ -29,6 +29,11 @@ auto CoFunc(int n) ->std::experimental::generator<uint64>
 	co_return;
 }
 
+std::future<void> DrawPoint() {
+
+	co_return; 
+}
+
 auto LoadTextFile(std::string fileName )->std::future<std::string>
 {
 	std::string returnValue;
@@ -59,8 +64,11 @@ int CWelcomeC17::start(int argc, char * argv[])
 		//std::cout << num << std::endl;
 	}
 
-	auto result =  string.get();
 
+	while (!string.valid())
+	{
+
+	}
 	return 0;
 }
 
