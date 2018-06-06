@@ -1,9 +1,14 @@
 #include "stdafx.h"
 #include "CWelcomeC17.h"
+#include <fstream>
+#include <future>
+
 
 CWelcomeC17::CWelcomeC17()
 {
 }
+
+
 
 
 auto CoFunc(int n) ->std::experimental::generator<uint64>
@@ -24,17 +29,37 @@ auto CoFunc(int n) ->std::experimental::generator<uint64>
 	co_return;
 }
 
+auto LoadTextFile(std::string fileName )->std::future<std::string>
+{
+	std::string returnValue;
+	std::ofstream file{fileName};
+	co_await std::async([&]() {
+		while (file.is_open());
+
+		while (file.eof())
+		{
+			file << returnValue;
+		}
+		return returnValue;
+	});
+	co_return returnValue;
+}
+
 int CWelcomeC17::start(int argc, char * argv[])
 {
 	uint64 temp;
 	//std::variant. 다양한 값을 받을 수 있다.
 	std::variant<int, std::string> i;
 
+	auto string = LoadTextFile("bigbigbig.txt");
+
 	//std:: 코-루틴.
 	for (uint64 num : CoFunc(1000000))
 	{
 		//std::cout << num << std::endl;
 	}
+
+	auto result =  string.get();
 
 	return 0;
 }

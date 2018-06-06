@@ -50,7 +50,7 @@ If you have questions concerning this license or the applicable additional terms
 #define ID_TIME_T int64 // Signed because -1 means "File not found" and we don't want that to compare > than any other time
 
 // non-portable system services
-
+#undef nullptr 
 
 
 // We have expression parsing and evaluation code in multiple places:
