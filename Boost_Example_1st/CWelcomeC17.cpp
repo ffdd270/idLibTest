@@ -50,6 +50,18 @@ auto LoadTextFile(std::string fileName )->std::future<std::string>
 	co_return returnValue;
 }
 
+int * GetPtr()
+{
+	static int fufu;
+	return &fufu;
+}
+
+int & GetRef()
+{
+	static int fufu;
+	return fufu;
+}
+
 int CWelcomeC17::start(int argc, char * argv[])
 {
 	uint64 temp;
@@ -62,6 +74,27 @@ int CWelcomeC17::start(int argc, char * argv[])
 	for (uint64 num : CoFunc(1000000))
 	{
 		//std::cout << num << std::endl;
+	}
+
+
+	std::vector<int> v;
+	std::vector<int>::iterator iter = v.begin();
+	auto autoiter = v.begin();
+	if (typeid(autoiter) == typeid(iter))
+	{
+		std::cout << " ²¥¾à" << std::endl; 
+		system("pause");
+	}
+	
+	auto autoPtr = GetPtr();
+	int * ptr = GetPtr();
+
+	auto autoRef = GetRef();
+	int & ref = GetRef();
+
+	if (typeid(autoRef) == typeid(ref))
+	{
+		std::cout << "Booyah!\n";
 	}
 
 

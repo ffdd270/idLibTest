@@ -8,12 +8,13 @@
 #include "CStyleString.h"
 #include "WinThreadTest.h"
 #include "EuclideanAlgorithm.h"
+#include "AlgorithmTest.h"
 #include <cstdio>
 #include <fstream>
 
 int main(int argc, char * argv[])
 {
-	IExample * test = new CWelcomeC17();
+	IExample * test = new AlgorithmTest();
 
 	//test -> this
 	unsigned char ch = -1;

@@ -163,6 +163,7 @@
     <Text Include="코드 편집 규약.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlgorithmTest.h" />
     <ClInclude Include="CStyleString.h" />
     <ClInclude Include="CWelcomeC17.h" />
     <ClInclude Include="EuclideanAlgorithm.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="WinThreadTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AlgorithmTest.cpp" />
     <ClCompile Include="CStyleString.cpp" />
     <ClCompile Include="CWelcomeC17.cpp" />
     <ClCompile Include="EuclideanAlgorithm.cpp" />
